@@ -25,7 +25,7 @@ use Throwable;
 class ReadChunk implements ShouldQueue
 {
     use Queueable, HasEventBus, InteractsWithQueue;
-    public $queue = 'export';
+    public $queue;
     /**
      * @var int
      */
@@ -103,6 +103,7 @@ class ReadChunk implements ShouldQueue
      */
     public function __construct(WithChunkReading $import, IReader $reader, TemporaryFile $temporaryFile, string $sheetName, $sheetImport, int $startRow, int $chunkSize)
     {
+        $this->onQueue('export');
         $this->import        = $import;
         $this->reader        = $reader;
         $this->temporaryFile = $temporaryFile;

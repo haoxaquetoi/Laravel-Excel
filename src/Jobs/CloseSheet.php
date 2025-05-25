@@ -11,7 +11,7 @@ use Maatwebsite\Excel\Writer;
 class CloseSheet implements ShouldQueue
 {
     use Queueable, ProxyFailures;
-    public $queue = 'export';
+    public $queue;
 
     /**
      * @var object
@@ -41,6 +41,7 @@ class CloseSheet implements ShouldQueue
      */
     public function __construct($sheetExport, TemporaryFile $temporaryFile, string $writerType, int $sheetIndex)
     {
+        $this->onQueue('export');
         $this->sheetExport   = $sheetExport;
         $this->temporaryFile = $temporaryFile;
         $this->writerType    = $writerType;

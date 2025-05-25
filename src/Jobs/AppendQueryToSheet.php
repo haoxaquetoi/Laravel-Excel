@@ -17,7 +17,7 @@ use Maatwebsite\Excel\Writer;
 class AppendQueryToSheet implements ShouldQueue
 {
     use Queueable, Dispatchable, ProxyFailures, InteractsWithQueue, HasEventBus;
-    public $queue = 'export';
+    public $queue;
     /**
      * @var TemporaryFile
      */
@@ -64,6 +64,7 @@ class AppendQueryToSheet implements ShouldQueue
         int $page,
         int $chunkSize
     ) {
+        $this->onQueue('export');
         $this->sheetExport   = $sheetExport;
         $this->temporaryFile = $temporaryFile;
         $this->writerType    = $writerType;

@@ -38,6 +38,7 @@ class AfterImportJob implements ShouldQueue
      */
     public function __construct($import, Reader $reader)
     {
+        $this->onQueue('export');
         $this->import = $import;
         $this->reader = $reader;
     }

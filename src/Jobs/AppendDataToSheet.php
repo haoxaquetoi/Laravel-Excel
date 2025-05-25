@@ -13,7 +13,7 @@ use Maatwebsite\Excel\Writer;
 class AppendDataToSheet implements ShouldQueue
 {
     use Queueable, Dispatchable, ProxyFailures, InteractsWithQueue;
-    public $queue = 'export';
+    public $queue;
     /**
      * @var array
      */
@@ -48,6 +48,7 @@ class AppendDataToSheet implements ShouldQueue
      */
     public function __construct($sheetExport, TemporaryFile $temporaryFile, string $writerType, int $sheetIndex, array $data)
     {
+        $this->onQueue('export');
         $this->sheetExport   = $sheetExport;
         $this->data          = $data;
         $this->temporaryFile = $temporaryFile;

@@ -10,7 +10,7 @@ use Maatwebsite\Excel\Files\TemporaryFile;
 class StoreQueuedExport implements ShouldQueue
 {
     use Queueable;
-    public $queue = 'export';
+    public $queue;
 
     /**
      * @var string
@@ -39,6 +39,7 @@ class StoreQueuedExport implements ShouldQueue
      */
     public function __construct(TemporaryFile $temporaryFile, string $filePath, ?string $disk = null, $diskOptions = [])
     {
+        $this->onQueue('export');
         $this->disk          = $disk;
         $this->filePath      = $filePath;
         $this->temporaryFile = $temporaryFile;

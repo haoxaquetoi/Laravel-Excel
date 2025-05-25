@@ -14,7 +14,7 @@ use Throwable;
 class QueueExport implements ShouldQueue
 {
     use ExtendedQueueable, Dispatchable;
-    public $queue = 'export';
+    public $queue;
     /**
      * @var object
      */
@@ -37,6 +37,7 @@ class QueueExport implements ShouldQueue
      */
     public function __construct($export, TemporaryFile $temporaryFile, string $writerType)
     {
+        $this->onQueue('export');
         $this->export        = $export;
         $this->writerType    = $writerType;
         $this->temporaryFile = $temporaryFile;

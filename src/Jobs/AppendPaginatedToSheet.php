@@ -18,7 +18,7 @@ use Maatwebsite\Excel\Writer;
 class AppendPaginatedToSheet implements ShouldQueue
 {
     use Queueable, Dispatchable, ProxyFailures, InteractsWithQueue;
-    public $queue = 'export';
+    public $queue;
     /**
      * @var TemporaryFile
      */
@@ -65,6 +65,7 @@ class AppendPaginatedToSheet implements ShouldQueue
         int $page,
         int $perPage
     ) {
+        $this->onQueue('export');
         $this->sheetExport   = $sheetExport;
         $this->temporaryFile = $temporaryFile;
         $this->writerType    = $writerType;
