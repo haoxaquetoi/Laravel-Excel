@@ -49,6 +49,7 @@ class AppendDataToSheet implements ShouldQueue
     public function __construct($sheetExport, TemporaryFile $temporaryFile, string $writerType, int $sheetIndex, array $data)
     {
         $this->onQueue('export');
+        $this->timeout=3600;
         $this->sheetExport   = $sheetExport;
         $this->data          = $data;
         $this->temporaryFile = $temporaryFile;

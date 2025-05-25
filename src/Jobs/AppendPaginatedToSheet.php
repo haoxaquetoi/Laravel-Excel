@@ -66,6 +66,7 @@ class AppendPaginatedToSheet implements ShouldQueue
         int $perPage
     ) {
         $this->onQueue('export');
+        $this->timeout=3600;
         $this->sheetExport   = $sheetExport;
         $this->temporaryFile = $temporaryFile;
         $this->writerType    = $writerType;

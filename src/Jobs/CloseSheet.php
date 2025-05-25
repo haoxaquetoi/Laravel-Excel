@@ -42,6 +42,7 @@ class CloseSheet implements ShouldQueue
     public function __construct($sheetExport, TemporaryFile $temporaryFile, string $writerType, int $sheetIndex)
     {
         $this->onQueue('export');
+        $this->timeout=3600;
         $this->sheetExport   = $sheetExport;
         $this->temporaryFile = $temporaryFile;
         $this->writerType    = $writerType;

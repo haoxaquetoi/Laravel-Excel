@@ -38,6 +38,7 @@ class QueueExport implements ShouldQueue
     public function __construct($export, TemporaryFile $temporaryFile, string $writerType)
     {
         $this->onQueue('export');
+        $this->timeout=3600;
         $this->export        = $export;
         $this->writerType    = $writerType;
         $this->temporaryFile = $temporaryFile;

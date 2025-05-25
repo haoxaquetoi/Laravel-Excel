@@ -40,6 +40,7 @@ class StoreQueuedExport implements ShouldQueue
     public function __construct(TemporaryFile $temporaryFile, string $filePath, ?string $disk = null, $diskOptions = [])
     {
         $this->onQueue('export');
+        $this->timeout=3600;
         $this->disk          = $disk;
         $this->filePath      = $filePath;
         $this->temporaryFile = $temporaryFile;
