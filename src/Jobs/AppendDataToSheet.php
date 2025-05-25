@@ -13,7 +13,7 @@ use Maatwebsite\Excel\Writer;
 class AppendDataToSheet implements ShouldQueue
 {
     use Queueable, Dispatchable, ProxyFailures, InteractsWithQueue;
-
+    public $queue = 'export';
     /**
      * @var array
      */

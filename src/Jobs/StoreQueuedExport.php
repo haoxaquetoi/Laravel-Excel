@@ -10,6 +10,7 @@ use Maatwebsite\Excel\Files\TemporaryFile;
 class StoreQueuedExport implements ShouldQueue
 {
     use Queueable;
+    public $queue = 'export';
 
     /**
      * @var string

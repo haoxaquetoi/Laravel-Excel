@@ -18,7 +18,7 @@ use Maatwebsite\Excel\Writer;
 class AppendPaginatedToSheet implements ShouldQueue
 {
     use Queueable, Dispatchable, ProxyFailures, InteractsWithQueue;
-
+    public $queue = 'export';
     /**
      * @var TemporaryFile
      */

@@ -11,6 +11,7 @@ use Maatwebsite\Excel\Writer;
 class CloseSheet implements ShouldQueue
 {
     use Queueable, ProxyFailures;
+    public $queue = 'export';
 
     /**
      * @var object

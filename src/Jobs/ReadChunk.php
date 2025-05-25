@@ -25,7 +25,7 @@ use Throwable;
 class ReadChunk implements ShouldQueue
 {
     use Queueable, HasEventBus, InteractsWithQueue;
-
+    public $queue = 'export';
     /**
      * @var int
      */
@@ -46,10 +46,6 @@ class ReadChunk implements ShouldQueue
      */
     public $backoff;
 
-    /**
-     * @var string
-     */
-    public $queue;
 
     /**
      * @var string

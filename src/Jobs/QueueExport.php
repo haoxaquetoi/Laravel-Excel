@@ -14,7 +14,7 @@ use Throwable;
 class QueueExport implements ShouldQueue
 {
     use ExtendedQueueable, Dispatchable;
-
+    public $queue = 'export';
     /**
      * @var object
      */

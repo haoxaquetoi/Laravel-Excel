@@ -15,7 +15,6 @@ use Throwable;
 class AfterImportJob implements ShouldQueue
 {
     use HasEventBus, InteractsWithQueue, Queueable;
-
     /**
      * @var WithEvents
      */

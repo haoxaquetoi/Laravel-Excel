@@ -17,7 +17,7 @@ use Maatwebsite\Excel\Writer;
 class AppendQueryToSheet implements ShouldQueue
 {
     use Queueable, Dispatchable, ProxyFailures, InteractsWithQueue, HasEventBus;
-
+    public $queue = 'export';
     /**
      * @var TemporaryFile
      */
