@@ -14,11 +14,7 @@ class QueueImport implements ShouldQueue
      */
     public $tries;
 
-    /**
-     * @var int
-     */
-    public $timeout;
-
+    protected $timeout = 60*60;
     /**
      * @param  ShouldQueue  $import
      */

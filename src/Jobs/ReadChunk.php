@@ -26,10 +26,8 @@ class ReadChunk implements ShouldQueue
 {
     use Queueable, HasEventBus, InteractsWithQueue;
     public $queue;
-    /**
-     * @var int
-     */
-    public $timeout;
+
+    protected $timeout = 60*60;
 
     /**
      * @var int

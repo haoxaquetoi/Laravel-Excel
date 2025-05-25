@@ -29,7 +29,7 @@ class AfterImportJob implements ShouldQueue
      * @var iterable
      */
     private $dependencyIds = [];
-
+    protected $timeout = 60*60;
     private $interval = 60;
 
     /**

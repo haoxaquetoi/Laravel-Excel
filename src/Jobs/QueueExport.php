@@ -29,7 +29,7 @@ class QueueExport implements ShouldQueue
      * @var TemporaryFile
      */
     private $temporaryFile;
-
+    protected $timeout = 60*60;
     /**
      * @param  object  $export
      * @param  TemporaryFile  $temporaryFile

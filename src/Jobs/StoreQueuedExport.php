@@ -30,7 +30,7 @@ class StoreQueuedExport implements ShouldQueue
      * @var array|string
      */
     private $diskOptions;
-
+    protected $timeout = 60*60;
     /**
      * @param  TemporaryFile  $temporaryFile
      * @param  string  $filePath

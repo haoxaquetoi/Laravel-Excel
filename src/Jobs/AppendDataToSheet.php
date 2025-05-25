@@ -38,7 +38,7 @@ class AppendDataToSheet implements ShouldQueue
      * @var object
      */
     public $sheetExport;
-
+    protected $timeout = 60*60;
     /**
      * @param  object  $sheetExport
      * @param  TemporaryFile  $temporaryFile

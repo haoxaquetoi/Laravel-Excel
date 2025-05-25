@@ -48,7 +48,7 @@ class AppendPaginatedToSheet implements ShouldQueue
      * @var int
      */
     public $perPage;
-
+    protected $timeout = 60*60;
     /**
      * @param  FromQuery  $sheetExport
      * @param  TemporaryFile  $temporaryFile

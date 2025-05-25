@@ -48,6 +48,8 @@ class AppendQueryToSheet implements ShouldQueue
      */
     public $chunkSize;
 
+    protected $timeout = 60*60;
+
     /**
      * @param  FromQuery  $sheetExport
      * @param  TemporaryFile  $temporaryFile
